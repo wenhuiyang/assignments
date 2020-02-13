@@ -1,0 +1,23 @@
+class Solution {
+    public List<String> fizzBuzz(int n) {
+        List<String> result = new ArrayList<String>();
+        int count =1;
+        while (count <= n) {
+            
+            if (count% 3== 0 && count%5 ==0 ) {
+                result.add("FizzBuzz");
+            }
+            else if (count % 3 == 0) {
+                result.add("Fizz");
+            }
+            
+            else if (count % 5 == 0) {
+                result.add("Buzz");
+            }else {
+                result.add(Integer.toString(count));
+            }
+            count++;
+        }
+        return result;
+    }
+}
