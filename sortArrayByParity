@@ -1,0 +1,28 @@
+class Solution {
+    public int[] sortArrayByParity(int[] A) {
+        int i =0;
+        int j = A.length -1;
+        System.out.println(j);
+        while (i < j) {
+            
+            int front = A[i];
+            int back = A[j];
+            
+            if (front% 2 == 0) {
+                // even increment
+                i++;
+            }else if (back % 2 != 0) {
+                // even move to front
+                j--;
+            } else  {
+                //swap
+                int dummy = A[i];
+                A[i] = A[j];
+                A[j] = dummy;
+                i++;
+                j--;
+            }
+        }
+        return A; 
+    }
+}
