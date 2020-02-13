@@ -1,0 +1,26 @@
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        // anagram means have the same characters and number of 
+        // strategy: user hashmap to keep track and then remove from hashmap
+        
+        HashMap<Character, Integer> map = new HashMap();
+        char[] st = s.toCharArray();
+        for (char c: st) {
+            Integer count = map.containsKey(c) ? map.get(c) : 0; 
+            map.put(c, count +1);
+        }
+        char[] th = t.toCharArray();
+        for (char c: th) {
+            if (map.containsKey(c)) {
+                if (map.get(c) > 1) {
+                    map.put(c, map.get(c) -1);
+                }else {
+                  map.remove(c); 
+                }
+            }else {
+                return false;
+            }
+        }
+     return map.size() == 0;
+    }
+}
