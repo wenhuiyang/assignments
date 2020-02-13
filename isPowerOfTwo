@@ -1,0 +1,7 @@
+class Solution {
+    public boolean isPowerOfTwo(int n) {
+        // power of 2's: 1, 2, 4, 8, 16, 32
+        // 1/2 = .5, 2/2 = 1, 4/2 = 2, 8/2 = 4
+         return n>0 && (n&n-1)==0;
+    }
+}
