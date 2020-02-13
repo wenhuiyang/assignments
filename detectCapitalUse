@@ -1,0 +1,21 @@
+class Solution {
+    public boolean detectCapitalUse(String word) {
+        
+        
+        char[] charinword= word.toCharArray();
+        int count =0; 
+        for (char c: charinword) {
+            if (c-'a' <0) {
+                count++;
+            }
+        }
+        
+        if (count ==0 || count==word.length()) {
+            return true;
+        }else if (count ==1 && word.charAt(0) <'a') {
+            return true;
+        }
+        return false; 
+
+    }
+}
