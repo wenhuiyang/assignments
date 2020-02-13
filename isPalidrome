@@ -1,0 +1,17 @@
+class Solution {
+    public boolean isPalindrome(String s) {
+        if (s == "") return true; 
+        s = s.replaceAll("[^a-zA-Z0-9]", "");
+        int iterator=0; 
+        while (iterator < s.length()/2) {
+            char front = Character.toLowerCase(s.charAt(iterator));
+            char back =  Character.toLowerCase(s.charAt(s.length()-1-iterator));
+            if (front != back){
+                return false;
+            }
+            iterator++;
+        }
+        return true; 
+                
+    }
+}
